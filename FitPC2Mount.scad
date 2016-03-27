@@ -21,4 +21,9 @@ difference() {
     translate([$width-20,20,-$border-0.1]) cylinder($border + 0.2,1.5,5);
     translate([20,$caseheight-30,-$border-0.1]) cylinder($border + 0.2,1.5,5);
     translate([$width-20,$caseheight-30,-$border-0.1]) cylinder($border + 0.2,1.5,5);
+    
+    // air holes in side
+     for(i = [$depth/2 : $depth/2 : $caseheight-$depth/2-$border*2]) {
+         translate([-$border-1,i,$depth/2]) rotate([0,90,0]) cylinder($width+($border+1)*2,$depth/2,$depth/2);
+     }
 }
